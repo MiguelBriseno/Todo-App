@@ -13,7 +13,7 @@
           </v-col>
           <!-- BOTON PARA ENVIO DE FORMULARIO -->
           <v-col cols="10">
-            <v-btn block class="primary" large :disabled="!okBtn">Agregar <v-icon right dark>mdi-plus-thick</v-icon></v-btn>
+            <v-btn block class="primary" large :disabled="!okBtn" @click="addTask">Agregar <v-icon right dark>mdi-plus-thick</v-icon></v-btn>
           </v-col>
         </v-row>
       </v-col>
@@ -38,6 +38,10 @@
 <script>
 import axios from 'axios'
   export default {
+    // HOOK DE CREACION
+    created(){
+      this.getTasks()
+    },
     // VARIABLES
     data(){
       return{
