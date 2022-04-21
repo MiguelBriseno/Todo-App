@@ -64,7 +64,7 @@ import axios from 'axios'
     methods:{
       // FUNCION PARA AÑADIR UNA NUEVA TAREA A LA BASE DE DATOS
       addTask(){
-        axios.post('http://localhost:3000/addTask', {
+        axios.post('http://localhost:3000/tasks/addTask', {
           task: this.task
         })
         .then((results) => {
@@ -81,7 +81,7 @@ import axios from 'axios'
       },
       // FUNCION PARA OBTENER TODAS LAS TAREAS AÑADIDAS A LA BASE DE DATOS
       getTasks(){
-        axios.post('http://localhost:3000/getTasks')
+        axios.post('http://localhost:3000/tasks/getTasks')
         .then((results) => {
           if(results.data.status){
             this.rows = results.data.data
