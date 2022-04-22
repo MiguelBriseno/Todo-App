@@ -24,7 +24,7 @@
           <h2 class="text-center">LISTA DE TAREAS PENDIENTES</h2>
           <br>
           <!-- LISTA DINAMICA QUE MUESTRA LA LISTA DE TAREAS -->
-          <v-row justify="center" align="center">
+          <v-row justify="center" align="center" v-if="rows != null">
             <v-col cols="10" v-for="(row, index) in rows" :key="index">
               {{index + 1}}. {{row.task}} - <b>{{row.taskStatus}}</b><br><br>
               <!-- BOTONES PARA BORRAR O ACTUALIZAR LA TAREA -->
